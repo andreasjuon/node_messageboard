@@ -1,0 +1,11 @@
+<%- include('navbar') %>
+
+<h2>Message Details</h2>
+
+<div class="message">
+  <h3><%= message.text %></h3>
+  <p>From: <%= message.user %></p>
+  <small>Posted on <%= message.added.toDateString() %>.</small>
+</div>
+
+<a href="/">Back to all messages</a>
