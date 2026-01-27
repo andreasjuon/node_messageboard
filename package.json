@@ -2,9 +2,9 @@
   "name": "proj_messageboard",
   "version": "1.0.0",
   "description": "A simple message board app.",
-  "main": "proj_messageboard/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node proj_messageboard/app.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "^4.18.2",
