@@ -1,9 +1,21 @@
 {
   "name": "proj_messageboard",
   "version": "1.0.0",
-  "description": "A simple message board app.",
+  "description": "",
+  "homepage": "https://github.com/andreasjuon/node_messageboard#readme",
+  "bugs": {
+    "url": "https://github.com/andreasjuon/node_messageboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasjuon/node_messageboard.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "app.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "dependencies": {
