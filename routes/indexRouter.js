@@ -1,6 +1,8 @@
 const { Router } = require("express");
 const indexRouter = Router();
+const controller = require("../controllers/controller");
 
+/*
 const messages = [
   {
     text: "Hi there! I am using this message board. And I love it. It is awesome. You should try it out.",
@@ -21,14 +23,38 @@ const messages = [
     id: crypto.randomUUID(),
   },
 ];
+*/
 
 // Show index page
-indexRouter.get("/", (req, res) => {
-  res.render("index", { title: "Andreas' Message Board", messages: messages });
-});
+indexRouter.get("/", controller.logMessages);
+
+// New message form
+indexRouter.get('/new', controller.createMessageGet);
 
 // Post new message
-indexRouter.post('/new', (req, res) => {
+indexRouter.post('/new', controller.createMessagePost);
+
+// Detail view of specific message
+indexRouter.get("/messages/:id", controller.showMessageDetail);
+
+
+
+/*
+showMessageDetail
+indexRouter.get("/messages/:id", (req, res) => {
+  const messageId = req.params.id;
+  const message = messages.find((m) => m.id === messageId);
+  if (!message) {
+    return res.status(404).send("Message not found");
+  }
+  res.render("messages", { message });
+});
+*/
+
+
+
+
+/*
   const messageText = req.body.text;
   const messageUser = req.body.user;
   const messageId = crypto.randomUUID();
@@ -36,15 +62,25 @@ indexRouter.post('/new', (req, res) => {
 
   res.redirect('/');
 });
+*/
 
-// Route to display a single message by ID
-indexRouter.get('/messages/:id', (req, res) => {
-  const messageId = req.params.id;
-  const message = messages.find(m => m.id === messageId);
-  if (!message) {
-    return res.status(404).send('Message not found');
-  }
-  res.render('messages', { message });
-});
 
 module.exports = indexRouter;
+
+
+
+/*
+
+router.get("/", controller.logUsers);
+
+router.get("/new", controller.createUsernameGet);
+
+router.post("/new", controller.createUsernamePost);
+
+router.get("/search", controller.findUsers);
+
+router.get("/deleteall", controller.deleteAllUsernames);
+
+module.exports = router;
+
+*/

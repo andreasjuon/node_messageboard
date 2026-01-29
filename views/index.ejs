@@ -5,7 +5,7 @@
 <% messages.forEach((message) => { %>
   <div class="message">
     <h3><%= message.text.length > 25 ? message.text.substring(0, 25) + "..." : message.text %></h3>
-    <p>From: <%= message.user %></p>
+    <p>From: <%= message.username %></p>
     <small>Posted on <%= message.added.toDateString() %>.</small>
     <button><a href="/messages/<%= message.id %>">Read more</a></button >
   </div>
